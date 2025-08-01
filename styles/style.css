@@ -18,6 +18,8 @@
   --white: hsl(0, 0%, 100%);
   --blue500: hsl(215, 51%, 70%);
   --cyan400: hsl(178, 100%, 50%);
+  --blue1000: hsl(217, 55%, 10%);
+  --blue975: hsl(217, 57%, 11%);
   --blue950: hsl(217, 54%, 11%);
   --blue900: hsl(216, 50%, 16%);
   --blue800: hsl(215, 32%, 27%);
@@ -49,6 +51,8 @@ body {
   width: 20.7em;
   padding: 1.5em;
   border-radius: 1em;
+  box-shadow: 0em 1.5em 0em 1em var(--blue1000),
+    0em 1.5em 0em 3em var(--blue975);
   background-color: var(--blue900);
 }
 
@@ -127,7 +131,7 @@ body {
 .user-info {
   display: flex;
   align-items: center;
-  margin: 0;
+  margin-bottom: 0.5em;
 }
 
 .user-info img {
