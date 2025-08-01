@@ -11,37 +11,37 @@
   padding: 0;
   font-family: "Outfit", sans-serif;
   box-sizing: border-box;
+  color: var(--white);
 }
 
 :root {
-  --link: hsl(228, 45%, 44%);
   --white: hsl(0, 0%, 100%);
   --blue500: hsl(215, 51%, 70%);
   --cyan400: hsl(178, 100%, 50%);
   --blue1000: hsl(217, 55%, 10%);
-  --blue975: hsl(217, 57%, 11%);
+  --blue975: hsl(217, 55%, 11%);
   --blue950: hsl(217, 54%, 11%);
   --blue900: hsl(216, 50%, 16%);
   --blue800: hsl(215, 32%, 27%);
-
   --bold: 600;
   --medium: 400;
   --thin: 300;
   --tiny: 200;
-
   --large-size: 1.25em;
   --medium-size: 1.125em;
-  --small-size: 14px;
+  --small-size: 0.875em;
 }
 
 html,
 body {
   background-color: var(--blue950);
+  width: 100vw;
+  height: 100vh;
 }
 
 .card-container {
   width: 100vw;
-  height: 100vh;
+  height: 98vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,11 +60,39 @@ body {
   margin: 1.1em 0;
 }
 
-.card img {
-  margin: 0;
-  width: 17.7em;
+.card-img > img {
   border-radius: 0.5em;
+  width: 17.7em;
   height: auto;
+  display: block;
+}
+
+.card-img {
+  margin: 0;
+  position: relative;
+}
+
+.overlay {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  border-radius: 0.5em;
+  transition: 0.5s ease;
+  position: absolute;
+  background-color: hsl(178, 100%, 50%, 0.5);
+}
+
+.icon {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.card-img:hover .overlay {
+  opacity: 1;
 }
 
 .card h1 {
@@ -74,8 +102,8 @@ body {
 }
 
 .card h1 a {
-  transition: color 0.3s;
   text-decoration: 0;
+  transition: color 0.4s;
   color: var(--white);
 }
 
@@ -94,33 +122,25 @@ body {
 }
 
 .card .horizontal-rule {
-  border-top: 1px solid var(--blue800);
+  border-top: 0.0625em solid var(--blue800);
 }
 
 .price-time {
+  margin: 1.15em 0;
   display: flex;
   justify-content: space-between;
-  margin: 1.15em 0;
-}
-
-.price-time div:nth-child(1) img {
-  width: 12px;
 }
 
 .price-time div p {
-  margin-left: 7px;
+  margin-left: 0.4375em;
   font-weight: var(--medium);
   font-size: var(--small-size);
 }
 
 .price-time div:first-child p {
-  margin-left: 5px;
+  margin-left: 0.3125em;
   font-weight: var(--bold);
   color: var(--cyan400);
-}
-
-.price-time div:nth-child(2) img {
-  width: 16px;
 }
 
 .price-time div {
@@ -129,16 +149,16 @@ body {
 }
 
 .user-info {
+  margin-bottom: 0.5em;
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
 }
 
 .user-info img {
-  border: 1px solid var(--white);
   border-radius: 2em;
   width: 2em;
   height: 2em;
+  border: 0.0625em solid var(--white);
 }
 
 .user-info p {
@@ -148,8 +168,8 @@ body {
 }
 
 .user-info p a {
+  transition: color 0.4s;
   text-decoration: none;
-  transition: color 0.3s;
   color: var(--white);
   font-size: var(--medium-size);
 }
@@ -158,11 +178,19 @@ body {
   color: var(--cyan400);
 }
 
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0.5em;
+}
+
 .attribution {
   text-align: center;
   font-size: 0.6875em;
 }
 
 .attribution a {
-  color: var(--link);
+  text-decoration: none;
+  color: var(--cyan400);
 }
