@@ -121,8 +121,8 @@ body {
   margin: 1.2em 0;
 }
 
-.card .horizontal-rule {
-  border-top: 0.0625em solid var(--blue800);
+.card hr {
+  border: 0.0625em solid var(--blue800);
 }
 
 .price-time {
